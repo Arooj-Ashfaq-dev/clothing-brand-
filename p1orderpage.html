@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Page - Debreeze Anime</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes pulseHover {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .animate-pulse-hover:hover {
+            animation: pulseHover 0.3s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800">
+
+
+    <!-- Top Banner -->
+    <div class="bg-black text-white text-center py-2 text-sm font-medium">
+        30% off in launch week. Shop Now
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-1 py-4 flex flex-col md:flex-row justify-between items-center">
+            <!-- Left Section: Currency and Shipping -->
+            <div class="flex items-center space-x-2 text-sm text-gray-600 mb-2 md:mb-0">
+                <span class="flex items-center">
+                    <span class="w-2 h-2 bg-green-500 rounded-full mr-1"></span> PKR
+                </span>
+                <span class="hidden md:inline">|</span>
+                <span>Free Shipping Over 5000 Rs</span>
+            </div>
+
+            <!-- Center: Logo -->
+            <div class="text-3xl font-bold text-black mb-2 md:mb-0 bg-white">
+                <img class="h-30 w-50" src="logo.png" alt="logo">
+            </div>
+
+            <!-- Right Section: Search and Icons -->
+            <div class="flex items-center space-x- w-full md:w-auto">
+                <div class="relative flex-1 md:flex-none md:w-48">
+                    <input type="text" placeholder="Search"
+                        class="w-full px-4 py-2 border-b border-gray-300 focus:outline-none focus:border-black transition duration-300">
+                    <svg class="absolute right-3 top-3 w-4 h-4 text-gray-500" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                </div>
+                <div class="flex items-center space-x-4 icons">
+                    <button class="text-gray-600 hover:text-black animate-pulse-hover transition duration-300">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                    </button>
+                    <a href="category.html"><button
+                            class="text-gray-600 hover:text-black animate-pulse-hover transition duration-300">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                                </path>
+                            </svg>
+                        </button></a>
+                    <button id="cartBtn"
+                        class="relative bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition">
+                        🛒 Cart
+                        <span id="cartCountBadge"
+                            class="absolute -top-2 -right-2 bg-red-500 text-xs px-1.5 py-0.5 rounded-full">0</span>
+                    </button>
+
+                </div>
+                <!-- Hamburger for Mobile -->
+                <div class="md:hidden hamburger ml-4">
+                    <button id="mobile-menu-btn"
+                        class="text-gray-600 hover:text-black animate-pulse-hover transition duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MEGA MENU  -->
+        <!-- Navbar -->
+        <nav class="bg-white shadow-md py-4 px-6 flex justify-center items-center">
+            <!-- <div class="text-2xl font-bold">Breeze</div> -->
+            <ul class="flex space-x-6 font-medium">
+
+                <!-- Regular Nav Links -->
+                <li>
+                    <a href="Home page.html"
+                        class="hover:text-black hover:underline transition duration-300 animate-pulse-hover">
+                        HOME
+                    </a>
+                </li>
+
+                <!-- Mega Menu Button -->
+                <li class="relative group">
+                    <button id="megaMenuBtn"
+                        class="hover:text-black hover:underline transition duration-300 animate-pulse-hover focus:outline-none">
+                        Customize print on demand
+                    </button>
+
+                    <!-- Mega Menu Content -->
+                    <div id="megaMenu"
+                        class="absolute left-0 top-8 hidden group-hover:flex flex-col md:flex-row md:space-x-8 bg-white shadow-xl rounded-lg border border-gray-200 p-6 w-[550px] z-50 transition-all duration-300">
+
+                        <!-- Column 1 -->
+                        <div>
+                            <h3 class="font-semibold text-black border-b border-gray-300 pb-1 mb-2">Anime Themes
+                            </h3>
+                            <ul class="space-y-1">
+                                <li><a href="#" class="hover:text-yellow-500 transition duration-200">T-Shirts</a></li>
+                                <li><a href="#" class="hover:text-yellow-500 transition duration-200">Hoodies</a></li>
+                                <li><a href="#" class="hover:text-yellow-500 transition duration-200">Jackets</a></li>
+                                <li><a href="#" class="hover:text-yellow-500 transition duration-200">Accessories</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Column 2 -->
+                        <div>
+                            <h3 class="font-semibold text-black border-b border-gray-300 pb-1 mb-2"> SPORTS
+                            </h3>
+                            <ul class="space-y-1">
+                                <li><a href="#" class="hover:text-yellow-500 transition duration-200">Tops</a></li>
+                                <li><a href="#" class="hover:text-yellow-500 transition duration-200">Dresses</a></li>
+                                <li><a href="#" class="hover:text-yellow-500 transition duration-200">Sweaters</a></li>
+                                <li><a href="#" class="hover:text-yellow-500 transition duration-200">Jewelry</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Column 3 -->
+                        <div>
+                            <h3 class="font-semibold text-black border-b border-gray-300 pb-1 mb-2">MOVIES</h3>
+                            <ul class="space-y-1">
+                                <li><a href="#" class="hover:text-yellow-500 transition duration-200">Naruto</a></li>
+                                <li><a href="#" class="hover:text-yellow-500 transition duration-200">Attack on
+                                        Titan</a>
+                                </li>
+                                <li><a href="#" class="hover:text-yellow-500 transition duration-200">One Piece</a></li>
+                                <li><a href="#" class="hover:text-yellow-500 transition duration-200">Dragon Ball</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="category.html"
+                        class="hover:text-black hover:underline transition duration-300 animate-pulse-hover">
+                        CATEGORY
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- JS for Mobile Toggle -->
+        <script>
+            const megaMenuBtn = document.getElementById('megaMenuBtn');
+            const megaMenu = document.getElementById('megaMenu');
+
+            // Toggle on click (for mobile)
+            megaMenuBtn.addEventListener('click', () => {
+                if (window.innerWidth < 768) {
+                    megaMenu.classList.toggle('hidden');
+                }
+            });
+
+            // Hide menu when resizing to desktop
+            window.addEventListener('resize', () => {
+                if (window.innerWidth >= 768) {
+                    megaMenu.classList.add('hidden');
+                }
+            });
+        </script>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-md border-t border-gray-200">
+            <ul class="px-4 py-2 space-y-2 text-sm text-gray-700">
+                <li><a href="#"
+                        class="block py-2 hover:text-black hover:underline transition duration-300 animate-pulse-hover">One
+                        Piece</a></li>
+                <li><a href="#"
+                        class="block py-2 hover:text-black hover:underline transition duration-300 animate-pulse-hover">Naruto</a>
+                </li>
+                <li><a href="#"
+                        class="block py-2 hover:text-black hover:underline transition duration-300 animate-pulse-hover">Solo
+                        Leveling</a></li>
+                <li><a href="#"
+                        class="block py-2 hover:text-black hover:underline transition duration-300 animate-pulse-hover">Jujutsu
+                        Kaisen</a></li>
+                <li><a href="#"
+                        class="block py-2 hover:text-black hover:underline transition duration-300 animate-pulse-hover">Demon
+                        Slayer</a></li>
+                <li><a href="#"
+                        class="block py-2 hover:text-black hover:underline transition duration-300 animate-pulse-hover">My
+                        Hero Academia</a></li>
+                <li><a href="#"
+                        class="block py-2 hover:text-black hover:underline transition duration-300 animate-pulse-hover">Black
+                        Clover</a></li>
+                <li><a href="#"
+                        class="block py-2 hover:text-black hover:underline transition duration-300 animate-pulse-hover">Chainsaw
+                        Man</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto p-6 grid md:grid-cols-2 gap-10">
+        <!-- LEFT SIDE IMAGES -->
+        <div>
+            <div class="flex flex-col space-y-4">
+                <!-- Big Image -->
+                <img id="mainImage" src="05.jpg" alt="Main Product"
+                    class="w-full h-[500px] object-cover rounded-xl shadow-md transition duration-300">
+
+                <!-- Small Images -->
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="06.jpg" alt="Alt 1"
+                        class="smallImage w-full h-[200px] object-cover rounded-xl cursor-pointer hover:scale-105 transition duration-300">
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT SIDE DETAILS -->
+        <div class="space-y-5">
+            <!-- Product Title -->
+            <h2 class="text-2xl font-semibold">T-Shirts</h2>
+
+            <!-- Sold Info -->
+            <p class="text-red-500 flex items-center space-x-2">
+                <span>🔥</span>
+                <span id="soldText">15 sold in last 16 hours</span>
+            </p>
+
+            <!-- Vendor / Availability -->
+            <p class="text-gray-700 leading-6">
+                <strong>Vendor:</strong> Debreeze Anime <br>
+                <strong>Availability:</strong> Many In Stock
+            </p>
+
+            <!-- Price -->
+            <div class="flex items-center space-x-4">
+                <p class="line-through text-gray-400 text-lg">Rs. 3,500.00</p>
+                <p class="text-xl font-semibold text-red-600" id="price">Rs. 2,500.00</p>
+            </div>
+
+            <!-- Size Selection -->
+            <div>
+                <p class="mt-2 text-sm text-gray-600">Size: <span id="selectedSize" class="font-semibold">S</span></p>
+                <div class="flex space-x-3">
+                    <button
+                        class="sizeBtn border border-gray-400 px-4 py-2 hover:bg-black hover:text-white rounded">S</button>
+                    <button
+                        class="sizeBtn border border-gray-400 px-4 py-2 hover:bg-black hover:text-white rounded">M</button>
+                    <button
+                        class="sizeBtn border border-gray-400 px-4 py-2 hover:bg-black hover:text-white rounded">L</button>
+                    <button
+                        class="sizeBtn border border-gray-400 px-4 py-2 hover:bg-black hover:text-white rounded">XL</button>
+                </div>
+
+            </div>
+
+            <!-- Quantity Section -->
+            <div>
+                <h5 class="font-medium mb-2">Quantity:</h5>
+                <div class="flex items-center border border-gray-400 w-32">
+                    <button id="decreaseQty" class="px-3 py-2 hover:bg-gray-200">−</button>
+                    <input type="text" id="quantity" value="1" class="w-12 text-center outline-none">
+                    <button id="increaseQty" class="px-3 py-2 hover:bg-gray-200">+</button>
+                </div>
+            </div>
+
+            <!-- Subtotal -->
+            <h5 class="text-lg">Subtotal: <span id="Subtotal" class="font-semibold">Rs. 2,500.00</span></h5>
+
+            <!-- Add to Cart Button -->
+            <button onclick="addToCart('Anime Tee', 2500, 'https://via.placeholder.com/200')"
+                class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800">Add to Cart</button>
+            <br>
+            <br>
+            <a href="orderinfo.html"> <button id="buynowbtn"
+                    class="bg-black text-black py-3 px-8 rounded-md w-full md:w-auto hover:bg-black text-white transition duration-300 animate-pulse-hover">
+                    BUY NOW
+                </button></a>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        const mainImage = document.getElementById('mainImage');
+        const smallImages = document.querySelectorAll('.smallImage');
+        const decreaseBtn = document.getElementById('decreaseQty');
+        const increaseBtn = document.getElementById('increaseQty');
+        const quantityInput = document.getElementById('quantity');
+        const Subtotal = document.getElementById('Subtotal');
+        const price = 2500;
+        const addToCartBtn = document.getElementById('addToCartBtn');
+        const buynowbtn = document.getElementById('buynowbtn');
+        const sizeBtns = document.querySelectorAll('.sizeBtn');
+        const selectedSize = document.getElementById('selectedSize');
+
+        // Image swapping
+        smallImages.forEach(img => {
+            img.addEventListener('click', () => {
+                const tempSrc = mainImage.src;
+                mainImage.src = img.src;
+                img.src = tempSrc;
+            });
+        });
+
+        // Size selection
+        sizeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                sizeBtns.forEach(b => b.classList.remove('bg-black', 'text-white'));
+                btn.classList.add('bg-black', 'text-white');
+                selectedSize.textContent = btn.textContent;
+            });
+        });
+
+        // Quantity buttons
+        increaseBtn.addEventListener('click', () => {
+            let qty = parseInt(quantityInput.value);
+            qty++;
+            quantityInput.value = qty;
+            subtotal.textContent = `Rs. ${(qty * price).toLocaleString()}.00`;
+        });
+
+        decreaseBtn.addEventListener('click', () => {
+            let qty = parseInt(quantityInput.value);
+            if (qty > 1) qty--;
+            quantityInput.value = qty;
+            subtotal.textContent = `Rs. ${(qty * price).toLocaleString()}.00`;
+        });
+
+        // Add to cart
+        addToCartBtn.addEventListener('click', () => {
+            const qty = parseInt(quantityInput.value);
+            const size = selectedSize.textContent;
+            const cartItem = {
+                name: 'T-Shirt',
+                price: price,
+                qty: qty,
+                size: size,
+                image: mainImage.src
+            };
+
+            // Save to localStorage (cart data)
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(cartItem);
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            alert(`${qty} x ${size} T-Shirt added to cart!`);
+        });
+    </script>
+
+
+
+    <!-- footer -->
+
+    <body class="bg-[#f5f5f5] text-[#1c1c1c]">
+
+        <!-- Footer -->
+        <footer class="py-14 border-t border-gray-300 bg-[#f5f5f5]">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[1.2fr_0.05fr_1fr_1fr_1fr_1fr] gap-8 px-6">
+
+                <!-- Newsletter Section -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-3">Newsletter Sign Up</h3>
+                    <p class="text-sm text-gray-700 mb-4 leading-relaxed">
+                        Sign up for new arrivals, offers,<br>and more!
+                    </p>
+
+                    <form class="flex border border-gray-300 w-[260px]">
+                        <input type="email" placeholder="enter your email"
+                            class="flex-grow px-3 py-2 focus:outline-none text-sm placeholder:text-gray-500">
+                        <button type="submit"
+                            class="bg-[#1c1c1c] text-white text-sm font-semibold px-5 hover:bg-gray-500 transition">
+                            SUBMIT
+                        </button>
+                    </form>
+
+                    <!-- Follow Us -->
+                    <div class="mt-8">
+                        <p class="font-semibold mb-3">Follow Us On</p>
+                        <div class="flex items-center space-x-6 text-xl">
+                            <a href="#" class="hover:text-gray-500"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="hover:text-gray-500"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="hover:text-gray-500"><i class="fab fa-pinterest-p"></i></a>
+                            <a href="#" class="hover:text-gray-500"><i class="fab fa-x-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Divider -->
+                <div class="hidden md:block border-l border-gray-300"></div>
+
+                <!-- Contact Us -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-3">Contact Us</h3>
+                    <ul class="space-y-3 text-sm text-gray-700">
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-phone-alt text-gray-600"></i>
+                            <span>TEXT:<br>+92(325)4733733</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-envelope text-gray-600"></i>
+                            <span>contact@deebreeze.com</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-map-marker-alt text-gray-600 mt-1"></i>
+                            <span>
+                                Office no.4,<br>Street no.38<br>Dharampura<br>Lahore
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Help -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-3">Help</h3>
+                </div>
+
+                <!-- About -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-3">About</h3>
+                </div>
+
+                <!-- Shop -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-3">Shop</h3>
+                </div>
+
+                <!-- Popular Search -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-3">Popular Search</h3>
+                </div>
+
+            </div>
+
+            <!-- Bottom Section -->
+            <div class="text-center mt-10 border-t border-gray-300 pt-5">
+                <p class="text-sm text-gray-600">@2025 DEEBREEZE.</p>
+                <p class="text-sm text-gray-600 mb-4">All Rights Reserved</p>
+
+                <!-- Payment Icons -->
+                <div class="flex justify-center space-x-3">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa" class="h-6">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Mastercard_2019_logo.svg"
+                        alt="Mastercard" class="h-6">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo_%282018%29.svg"
+                        alt="Amex" class="h-6">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Apple_Pay_logo.svg" alt="Apple Pay"
+                        class="h-6">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Discover_Card_logo.svg" alt="Discover"
+                        class="h-6">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" class="h-6">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Shopify_logo_2022.svg" alt="Shopify"
+                        class="h-6">
+                </div>
+            </div>
+        </footer>
+
+
+
+
+        <!-- cart -->
+        <div id="cartOverlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
+
+        <!-- Popup Cart Drawer -->
+        <div id="cartDrawer"
+            class="fixed top-0 right-0 w-full sm:w-[400px] h-full bg-white shadow-lg z-50 hidden flex flex-col slide-in">
+
+            <!-- Header -->
+            <div class="flex justify-between items-center p-5 border-b">
+                <h3 class="text-xl font-bold">Shopping Cart</h3>
+                <button id="closeCart" class="text-2xl font-bold hover:text-gray-600">&times;</button>
+            </div>
+
+            <!-- Cart Content -->
+            <div id="cartContent" class="flex-1 overflow-y-auto p-5">
+
+                <!-- Empty Cart Message -->
+                <div id="emptyCart" class="text-center">
+                    <p class="text-sm text-gray-600 mb-2">Free shipping for all orders over <span
+                            class="font-semibold">Rs:3000.00!</span></p>
+                    <p class="text-lg font-semibold mt-10">Your cart is empty.</p>
+                    <button id="continueShopping"
+                        class="mt-5 bg-black text-white px-6 py-2 rounded hover:bg-gray-800 transition">Continue
+                        Shopping</button>
+                </div>
+
+                <!-- Filled Cart Content -->
+                <div id="filledCart" class="hidden">
+                    <p id="itemCount" class="text-sm text-gray-700 mb-3"></p>
+                    <p class="text-sm mb-3 text-gray-600">Free shipping for all orders over Rs:3000.00!</p>
+
+                    <!-- Progress Bar -->
+                    <div class="w-full bg-gray-200 rounded-full h-2 mb-4">
+                        <div id="progressBar" class="bg-green-500 h-2 rounded-full" style="width: 0%;"></div>
+                    </div>
+                    <p id="shippingMsg" class="text-sm text-green-600 mb-4 hidden">🎉 Enjoy your free shipping!</p>
+
+                    <!-- Product List -->
+                    <div id="cartItems" class="space-y-4 mb-4"></div>
+
+                    <!-- Subtotal -->
+                    <div class="flex justify-between items-center border-t pt-3">
+                        <p class="font-medium">Subtotal:</p>
+                        <p id="subtotal" class="font-semibold">Rs: 0.00</p>
+                    </div>
+
+                    <!-- Total -->
+                    <div class="flex justify-between items-center mt-2">
+                        <p class="font-medium">Total:</p>
+                        <p id="total" class="font-bold text-lg">Rs: 0.00</p>
+                    </div>
+
+                    <p class="text-xs text-gray-500 mt-2">Tax included and shipping calculated at checkout.</p>
+
+                    <button id="checkoutBtn"
+                        class="w-full bg-black text-white py-2 mt-5 rounded hover:bg-gray-800 transition">Checkout</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const cartBtn = document.getElementById('cartBtn');
+            const closeCart = document.getElementById('closeCart');
+            const cartDrawer = document.getElementById('cartDrawer');
+            const cartOverlay = document.getElementById('cartOverlay');
+            const continueShopping = document.getElementById('continueShopping');
+            const emptyCart = document.getElementById('emptyCart');
+            const filledCart = document.getElementById('filledCart');
+            const itemCount = document.getElementById('itemCount');
+            const cartItems = document.getElementById('cartItems');
+            const subtotal = document.getElementById('subtotal');
+            const total = document.getElementById('total');
+            const progressBar = document.getElementById('progressBar');
+            const shippingMsg = document.getElementById('shippingMsg');
+            const cartCountBadge = document.getElementById('cartCountBadge');
+            const checkoutBtn = document.getElementById('checkoutBtn');
+
+            let cart = [];
+
+            // Open Cart Drawer
+            cartBtn.addEventListener('click', () => {
+                cartOverlay.classList.remove('hidden');
+                cartDrawer.classList.remove('hidden');
+                cartDrawer.classList.add('slide-in');
+            });
+
+            // Close Cart Drawer
+            function closeCartDrawer() {
+                cartDrawer.classList.add('slide-out');
+                setTimeout(() => {
+                    cartDrawer.classList.add('hidden');
+                    cartOverlay.classList.add('hidden');
+                    cartDrawer.classList.remove('slide-out');
+                }, 300);
+            }
+
+            closeCart.addEventListener('click', closeCartDrawer);
+            cartOverlay.addEventListener('click', closeCartDrawer);
+            continueShopping.addEventListener('click', closeCartDrawer);
+
+            // Add to Cart Function
+            function addToCart(name, price, image) {
+                cart.push({ name, price, image });
+                updateCart();
+            }
+
+            // Update Cart Display
+            function updateCart() {
+                cartCountBadge.textContent = cart.length;
+
+                if (cart.length === 0) {
+                    emptyCart.classList.remove('hidden');
+                    filledCart.classList.add('hidden');
+                    return;
+                }
+
+                emptyCart.classList.add('hidden');
+                filledCart.classList.remove('hidden');
+
+                itemCount.textContent = `You have ${cart.length} item(s) in your cart.`;
+                cartItems.innerHTML = '';
+
+                let subtotalVal = 0;
+                cart.forEach((item) => {
+                    subtotalVal += item.price;
+                    const itemHTML = `
+          <div class="flex items-center justify-between border p-2 rounded">
+            <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-cover rounded">
+            <div class="flex-1 ml-3">
+              <h4 class="font-medium">${item.name}</h4>
+              <p class="text-sm text-gray-600">Rs: ${item.price}</p>
+            </div>
+          </div>`;
+                    cartItems.insertAdjacentHTML('beforeend', itemHTML);
+                });
+
+                subtotal.textContent = `Rs: ${subtotalVal}.00`;
+                total.textContent = `Rs: ${subtotalVal}.00`;
+
+                // Progress Bar Logic
+                let progress = (subtotalVal / 3000) * 100;
+                if (progress > 100) progress = 100;
+                progressBar.style.width = progress + '%';
+
+                if (subtotalVal >= 3000) {
+                    shippingMsg.classList.remove('hidden');
+                } else {
+                    shippingMsg.classList.add('hidden');
+                }
+            }
+
+            // Checkout button redirect
+            checkoutBtn.addEventListener('click', () => {
+                alert('Redirecting to product detail / checkout page...');
+                closeCartDrawer();
+            });
+        </script>
+    </body>
+
+</html>
